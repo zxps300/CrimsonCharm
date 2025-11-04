@@ -11,7 +11,7 @@
       background-color: #fff5f5;
       color: #4a0000;
     }
-
+    
     /* HEADER */
     header {
       background-color: #b30000;
@@ -20,11 +20,27 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      position: relative; /* allows absolute centering of brand */
     }
-
+    
     header img {
       height: 60px;
+    }
+
+    /* Center brand */
+    .brand {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .brand a {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
     }
 
     nav ul {
@@ -204,6 +220,11 @@
       #banner h1 {
         font-size: 36px;
       }
+      .brand {
+        position: static;
+        transform: none;
+        margin: 10px auto;
+      }
     }
   </style>
 </head>
@@ -212,7 +233,14 @@
 
   <!-- HEADER -->
   <header>
-    <img src="Crimsonlogo.png" alt="Crimson Charm Logo">
+    <div class="logo">
+      <img src="Crimsonlogo.png" alt="Crimson Charm Logo">
+    </div>
+
+    <div class="brand">
+      <a href="#owner">Shine D. Malabar</a>
+    </div>
+
     <nav>
       <ul>
         <li><a href="#banner">Home</a></li>
@@ -228,7 +256,7 @@
     <p>Beauty that speaks in crimson tones.</p>
   </section>
 
-  <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
   <main id="products">
     <section>
       <img src="nail.jpg" alt="Red Bow Nail Art"/>
@@ -252,7 +280,7 @@
     </section>
 
     <section>
-      <img src="./liquid.jpg" alt="Liquid Foundation Shades">
+      <img src="liquid.jpg" alt="Liquid Foundation Shades">
       <h2>Liquid Foundation Shades Collection</h2>
       <p class="desc">A range of lightweight, blendable foundations in multiple tones for a flawless, natural finish.</p>
       <a href="sms:09352156281" class="button">Order via SMS</a>
@@ -265,6 +293,7 @@
       <a href="sms:09352156281" class="button">Order via SMS</a>
     </section>
   </main>
+
 
   <!-- CONTACT FORM -->
   <section id="contact">
